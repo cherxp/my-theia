@@ -220,7 +220,7 @@ export function createAPIFactory(
             }
         };
 
-        const mccServer: typeof theia.mccServer = {
+        const myServer: typeof theia.myServer = {
 
             sayHello(): void {
                 // console.log('Hello from plugin');
@@ -771,7 +771,7 @@ export function createAPIFactory(
             version: require('../../package.json').version,
             commands,
             comment,
-            mccServer,
+            myServer,
             window,
             workspace,
             env,

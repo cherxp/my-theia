@@ -3002,7 +3002,7 @@ declare module '@theia/plugin' {
         handleUri(uri: Uri): ProviderResult<void>;
     }
 
-    export namespace mccServer {
+    export namespace myServer {
 
         export function sayHello(): void;
 
