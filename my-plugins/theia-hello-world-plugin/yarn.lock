@@ -15,10 +15,11 @@
     read-pkg "4.0.1"
     yargs "12.0.1"
 
-"@theia/plugin@next":
-  version "0.11.0-next.aa8a4234"
-  resolved "https://registry.yarnpkg.com/@theia/plugin/-/plugin-0.11.0-next.aa8a4234.tgz#65a4d5ed8add8df13ee46e19c3a458cbfc303b06"
-  integrity sha512-RMRmZhBpNU1Rud/qEwG4gITrz6PjsUmnQQMILHlNTfk/DEFyH6GkP9KZhfUaC19llkWbSNDG6gTvh5CdVo6iyQ==
+"@theia/plugin@../../packages/plugin":
+  version "0.10.0"
+
+"@theia/testservice@../../packages/test-service":
+  version "0.0.1"
 
 "@types/events@*":
   version "3.0.0"

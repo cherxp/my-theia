@@ -224,7 +224,7 @@ export function createAPIFactory(
 
             sayHello(): void {
                 // console.log('Hello from plugin');
-                window.showInformationMessage('said hello !');
+                showInformationMessage('Hello from theia service !');
             }
 
         };

@@ -4,6 +4,7 @@
  */
 
 import * as theia from '@theia/plugin';
+import * as myservice from '@theia/testservice';
 
 export function start(context: theia.PluginContext) {
     const informationMessageTestCommand = {
@@ -12,7 +13,8 @@ export function start(context: theia.PluginContext) {
     };
     context.subscriptions.push(theia.commands.registerCommand(informationMessageTestCommand, (...args: any[]) => {
 
-        theia.myServer.sayHello();
+        // theia.myServer.sayHello();
+        myservice.myServerNew.sayHello();
 
     }));
 

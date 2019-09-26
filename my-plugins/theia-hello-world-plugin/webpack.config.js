@@ -36,15 +36,16 @@ module.exports = {
     },
     output: {
         filename: 'theia-hello-world-plugin-frontend.js',
-        
+
         libraryTarget: "var",
         library: "theia_theia_hello_world_plugin",
-                
+
         path: path.resolve(__dirname, 'dist')
     },
     externals: {
-        
-            "@theia/plugin": "theia.theia_theia_hello_world_plugin"
-        
-	}
+
+        "@theia/plugin": "theia.theia_theia_hello_world_plugin",
+        "@theia/testservice": "theia.theia_theia_hello_world_plugin"
+
+    }
 };
