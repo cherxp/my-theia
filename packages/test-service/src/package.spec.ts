@@ -14,22 +14,15 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-import { injectable } from 'inversify';
-import { ExtPluginApiProvider, ExtPluginApi } from '@theia/plugin-ext';
-// import * as path from 'path';
+/* note: this bogus test file is required so that
+   we are able to run mocha unit tests on this
+   package, without having any actual unit tests in it.
+   This way a coverage report will be generated,
+   showing 0% coverage, instead of no report.
+   This file can be removed once we have real unit
+   tests in place. */
 
-@injectable()
-export class TestServerPluginApiProvider implements ExtPluginApiProvider {
+describe('plugin package', () => {
 
-    provideApi(): ExtPluginApi {
-        return {
-            // frontendExtApi: {
-            //     initPath: './browser/testservice-api-frontend-provider.js',
-            //     initFunction: 'ExtPluginApiFrontendInitializationFn',
-            //     initVariable: 'testserver_api_provider'
-            // },
-            // backendInitPath: path.join(__dirname, './node/testservice-api-node-provider.js')
-            backendInitPath: '/home/xpress1/Xpress/theia/packages/test-service-ext/lib/node/testservice-api-node-provider.js'
-        };
-    }
-}
+    it('support code coverage statistics', () => true);
+});

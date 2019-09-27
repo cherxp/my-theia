@@ -1,5 +1,5 @@
 {
-  "name": "theia-hello-world-plugin",
+  "name": "newplugin",
   "publisher": "theia",
   "keywords": [
     "theia-plugin"
@@ -14,30 +14,26 @@
   ],
   "devDependencies": {
     "@theia/plugin-packager": "latest",
-    "clean-webpack-plugin": "^0.1.19",
     "rimraf": "2.6.2",
-    "ts-loader": "^4.1.0",
     "typescript": "2.9.2",
-    "typescript-formatter": "7.2.2",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^3.1.1"
+    "typescript-formatter": "7.2.2"
   },
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
     "clean": "rimraf lib",
     "format-code": "tsfmt -r",
-    "watch": "webpack-cli -w --config webpack.config.js",
-    "compile": "webpack-cli --config webpack.config.js",
-    "build": "yarn run format-code && yarn run compile && theia-plugin pack && mv theia_hello_world_plugin.theia ../../plugins/"
+    "watch": "tsc -watch",
+    "compile": "tsc",
+    "build": "yarn run format-code && yarn run compile && theia-plugin pack && mv newplugin.theia ../../plugins"
   },
   "engines": {
     "theiaPlugin": "next"
   },
   "theiaPlugin": {
-    "frontend": "dist/theia-hello-world-plugin-frontend.js"
+    "backend": "lib/newplugin-backend.js"
   },
   "dependencies": {
     "@theia/plugin": "file:../../packages/plugin",
-    "@theia/testservice": "file:../../packages/test-service"
+    "@theia/testservice": "^0.0.1"
   }
 }

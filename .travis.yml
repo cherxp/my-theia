@@ -15,7 +15,7 @@ cache:
   - dev-packages/electron/node_modules
   - examples/browser/node_modules
   - examples/electron/node_modules
-  - my-plugins/theia-hello-world-plugin/node_modules
+  - my-plugins/newplugin/node_modules
   - node_modules
   - packages/bunyan/node_modules
   - packages/callhierarchy/node_modules

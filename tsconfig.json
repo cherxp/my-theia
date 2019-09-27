@@ -129,6 +129,9 @@
       ],
       "@theia/task/lib/*": [
         "packages/task/src/*"
+      ],
+      "@theia/testservice-ext/lib/*": [
+        "packages/testservice-ext/src/*"
       ]
     },
     "plugins": [

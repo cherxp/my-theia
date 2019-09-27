@@ -19,9 +19,9 @@ import { RPCProtocol, RPCProtocolImpl } from '@theia/plugin-ext/src/common/rpc-p
 import { Plugin, emptyPlugin } from '@theia/plugin-ext/lib/common/plugin-api-rpc';
 import { ExtPluginApiBackendInitializationFn } from '@theia/plugin-ext';
 import * as testService from '@theia/testservice';
-import { createAPIFactory, TestServiceApiFactory } from '../testserver-api';
 import { PluginManager } from '@theia/plugin-ext';
 import { MessageRegistryExt } from '@theia/plugin-ext/src/plugin/message-registry';
+import { createAPIFactory, TestServiceApiFactory } from '../testserver-api';
 
 const pluginsApiImpl = new Map<string, typeof testService>();
 let defaultApi: typeof testService;

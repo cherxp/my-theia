@@ -33,7 +33,7 @@ export function createAPIFactory(
 
     return function (plugin: Plugin): typeof testservice {
 
-        const myServerNew: typeof testservice.myServerNew = {
+        const myServerNewVariable: typeof testservice.myServerNew = {
 
             sayHello(): void {
                 // console.log('Hello from plugin');
@@ -43,7 +43,7 @@ export function createAPIFactory(
         };
 
         return <typeof testservice>{
-            myServerNew
+            myServerNew: myServerNewVariable
         };
 
     };
