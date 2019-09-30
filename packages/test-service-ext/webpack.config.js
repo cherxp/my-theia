@@ -12,7 +12,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/browser/che-api-worker-provider.ts',
+    entry: './src/browser/testservice-api-frontend-provider.ts',
     devtool: 'source-map',
     mode: 'production',
     node: {

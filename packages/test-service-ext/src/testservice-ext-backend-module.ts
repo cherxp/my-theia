@@ -15,13 +15,16 @@
  ********************************************************************************/
 
 import { ContainerModule } from 'inversify';
-// import { bindMainBackend } from './node/testservice-ext-backend-module';
 import { TestServerPluginApiProvider } from './testservice-plugin-api-provider';
 import { ExtPluginApiProvider } from '@theia/plugin-ext';
+import { TestServicePluginApiContribution } from './node/testservice-script-service';
+import { BackendApplicationContribution } from '@theia/core/lib/node/backend-application';
 
 export default new ContainerModule(bind => {
-    // bindMainBackend(bind);
 
     bind(TestServerPluginApiProvider).toSelf().inSingletonScope();
     bind(Symbol.for(ExtPluginApiProvider)).toService(TestServerPluginApiProvider);
+
+    bind(TestServicePluginApiContribution).toSelf().inSingletonScope();
+    bind(BackendApplicationContribution).toService(TestServicePluginApiContribution);
 });

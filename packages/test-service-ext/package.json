@@ -2,8 +2,6 @@
   "name": "@theia/testservice-ext",
   "version": "0.0.1",
   "description": "Theia - TestService Extension",
-  "main": "lib/common/index.js",
-  "typings": "lib/common/index.d.ts",
   "dependencies": {
     "@theia/core": "^0.10.0",
     "@theia/plugin-ext": "^0.10.0",

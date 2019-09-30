@@ -14,13 +14,14 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-import { Emitter } from '@theia/core/lib/common/event';
-import { RPCProtocol, RPCProtocolImpl } from '@theia/plugin-ext/src/common/rpc-protocol';
+// import { Emitter } from '@theia/core/lib/common/event';
+// import { RPCProtocol, RPCProtocolImpl } from '@theia/plugin-ext/src/common/rpc-protocol';
+import { RPCProtocol } from '@theia/plugin-ext/src/common/rpc-protocol';
 import { Plugin, emptyPlugin } from '@theia/plugin-ext/lib/common/plugin-api-rpc';
 import { ExtPluginApiBackendInitializationFn } from '@theia/plugin-ext';
 import * as testService from '@theia/testservice';
 import { PluginManager } from '@theia/plugin-ext';
-import { MessageRegistryExt } from '@theia/plugin-ext/src/plugin/message-registry';
+// import { MessageRegistryExt } from '@theia/plugin-ext/src/plugin/message-registry';
 import { createAPIFactory, TestServiceApiFactory } from '../testserver-api';
 
 const pluginsApiImpl = new Map<string, typeof testService>();
@@ -30,21 +31,21 @@ let TestServiceApiFactory: TestServiceApiFactory;
 let plugins: PluginManager;
 
 // tslint:disable-next-line:no-any
-const ctx = self as any;
+// const ctx = self as any;
 
-const emitter = new Emitter();
-const rpc = new RPCProtocolImpl({
-    onMessage: emitter.event,
-    send: (m: {}) => {
-        ctx.postMessage(m);
-    }
-});
-const messageRegistryExt = new MessageRegistryExt(rpc);
+// const emitter = new Emitter();
+// const rpc = new RPCProtocolImpl({
+//     onMessage: emitter.event,
+//     send: (m: {}) => {
+//         ctx.postMessage(m);
+//     }
+// });
+// const messageRegistryExt = new MessageRegistryExt(rpc);
 
 export const provideApi: ExtPluginApiBackendInitializationFn = (rpcObj: RPCProtocol, pluginManager: PluginManager) => {
-    TestServiceApiFactory = createAPIFactory(
-        rpcObj,
-        messageRegistryExt);
+    TestServiceApiFactory = createAPIFactory();
+    // rpcObj,
+    // messageRegistryExt);
     plugins = pluginManager;
 
     if (!isLoadOverride) {
