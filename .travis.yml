@@ -24,6 +24,7 @@ cache:
   - packages/cpp/node_modules
   - packages/debug-nodejs/node_modules
   - packages/debug/node_modules
+  - packages/eclipse-che-theia-plugin-ext/node_modules
   - packages/editor-preview/node_modules
   - packages/editor/node_modules
   - packages/editorconfig/node_modules
@@ -58,8 +59,6 @@ cache:
   - packages/search-in-workspace/node_modules
   - packages/task/node_modules
   - packages/terminal/node_modules
-  - packages/test-service-ext/node_modules
-  - packages/test-service/node_modules
   - packages/textmate-grammars/node_modules
   - packages/tslint/node_modules
   - packages/typehierarchy/node_modules

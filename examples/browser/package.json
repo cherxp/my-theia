@@ -52,8 +52,6 @@
     "@theia/search-in-workspace": "^0.10.0",
     "@theia/task": "^0.10.0",
     "@theia/terminal": "^0.10.0",
-    "@theia/testservice": "^0.0.1",
-    "@theia/testservice-ext": "^0.0.1",
     "@theia/textmate-grammars": "^0.10.0",
     "@theia/tslint": "^0.10.0",
     "@theia/typehierarchy": "^0.10.0",

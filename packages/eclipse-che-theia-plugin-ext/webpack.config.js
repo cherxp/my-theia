@@ -12,10 +12,10 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/browser/testservice-api-frontend-provider.ts',
+    entry: './src/plugin/webworker/che-api-worker-provider.ts',
     devtool: 'source-map',
     mode: 'production',
-    node: {
+    node:{
         fs: 'empty',
         child_process: 'empty',
         net: 'empty',
@@ -38,15 +38,15 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['lib/browser'])
+        new CleanWebpackPlugin(['lib/webworker'])
     ],
     resolve: {
         extensions: ['.ts', '.js']
     },
     output: {
-        filename: 'testservice-api-frontend-provider.js',
+        filename: 'che-api-worker-provider.js',
         libraryTarget: "var",
-        library: "testserver_api_provider",
-        path: path.resolve(__dirname, 'lib/browser')
+        library: "che_api_provider",
+        path: path.resolve(__dirname, 'lib/webworker')
     }
 };
