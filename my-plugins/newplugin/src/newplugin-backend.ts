@@ -4,7 +4,7 @@
  */
 
 import * as mytheia from '@theia/plugin';
-// import * as myapi from '@eclipse-che/plugin';
+import * as mycheapi from '@eclipse-che/plugin';
 // import * as myapi from '@theia/testservice';
 
 export function start(context: mytheia.PluginContext) {
@@ -15,10 +15,9 @@ export function start(context: mytheia.PluginContext) {
     context.subscriptions.push(mytheia.commands.registerCommand(informationMessageTestCommand, (...args: any[]) => {
         // mytheia.window.showInformationMessage('Hello World from new plugin!');
         // myapi.myServerNew.sayHello();
-        mytheia.myServer.sayHello();
+        // mytheia.myServer.sayHello();
 
-        // myapi.myServer.sayHello();
-        // myapi.devfile.createWorkspace('test message');
+        mycheapi.devfile.createWorkspace('test message');
 
     }));
 

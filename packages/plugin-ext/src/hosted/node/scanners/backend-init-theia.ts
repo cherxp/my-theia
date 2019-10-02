@@ -34,6 +34,7 @@ export const doInitialization: BackendInitializationFn = (apiFactory: PluginAPIF
 
     if (!isLoadOverride) {
         overrideInternalLoad();
+        console.log('overrideInternalLoad success');
         isLoadOverride = true;
     }
 
@@ -47,6 +48,7 @@ function overrideInternalLoad(): void {
     // if we try to resolve theia module, return the filename entry to use cache.
     // tslint:disable-next-line:no-any
     module._load = function (request: string, parent: any, isMain: {}): any {
+        console.log('request = ' + request);
         if (request !== '@theia/plugin') {
             return internalLoad.apply(this, arguments);
         }

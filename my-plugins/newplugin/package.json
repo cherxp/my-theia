@@ -33,6 +33,7 @@
     "backend": "lib/newplugin-backend.js"
   },
   "dependencies": {
+    "@theia/plugin": "file:../../packages/plugin",
     "@eclipse-che/plugin": "file:../../packages/eclipse-che-theia-plugin"
   }
 }

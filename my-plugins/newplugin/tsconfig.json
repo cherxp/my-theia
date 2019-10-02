@@ -1,4 +1,28 @@
 {
+    "$schema": "https://schemastore.azurewebsites.net/schemas/json/tsconfig.json",
+    "compilerOptions": {
+        "skipLibCheck": true,
+        "experimentalDecorators": true,
+        "noUnusedLocals": true,
+        "emitDecoratorMetadata": true,
+        "downlevelIteration": true,
+        "noEmitOnError": false,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "target": "es5",
+        "lib": [
+            "es6",
+            "webworker"
+        ],
+        "rootDir": "src",
+        "outDir": "lib"
+    },
+    "include": [
+        "src"
+    ]
+}
+/*{
     "compilerOptions": {
         "strict": true,
         "experimentalDecorators": true,
@@ -20,4 +44,4 @@
     "include": [
         "src"
     ]
-}
+}*/
