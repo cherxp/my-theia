@@ -801,6 +801,9 @@
 "@theia/plugin@file:packages/plugin":
   version "0.10.0"
 
+"@theia/testservice@file:packages/test-service":
+  version "0.0.1"
+
 "@typefox/monaco-editor-core@^0.18.0-next":
   version "0.18.0-next.1"
   resolved "https://registry.yarnpkg.com/@typefox/monaco-editor-core/-/monaco-editor-core-0.18.0-next.1.tgz#c31d3361215703b524065f460e1b4b6b714699db"

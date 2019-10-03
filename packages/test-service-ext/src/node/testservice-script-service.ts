@@ -14,21 +14,21 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-import * as express from 'express';
-import { BackendApplicationContribution } from '@theia/core/lib/node/backend-application';
-import { injectable } from 'inversify';
-import * as path from 'path';
+// import * as express from 'express';
+// import { BackendApplicationContribution } from '@theia/core/lib/node/backend-application';
+// import { injectable } from 'inversify';
+// import * as path from 'path';
 
-const pluginPath = (process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE) + './theia/plugins/';
+// const pluginPath = (process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE) + './theia/plugins/';
 
-@injectable()
-export class TestServicePluginApiContribution implements BackendApplicationContribution {
+// @injectable()
+// export class TestServicePluginApiContribution implements BackendApplicationContribution {
 
-    configure(app: express.Application): void {
-        app.get('/testservice/:path(*)', (req, res) => {
-            const filePath: string = req.params.path;
-            res.sendFile(path.resolve(pluginPath, filePath));
-        });
-    }
+//     configure(app: express.Application): void {
+//         app.get('/testservice/:path(*)', (req, res) => {
+//             const filePath: string = req.params.path;
+//             res.sendFile(path.resolve(pluginPath, filePath));
+//         });
+//     }
 
-}
+// }

@@ -42,10 +42,8 @@ let plugins: PluginManager;
 // });
 // const messageRegistryExt = new MessageRegistryExt(rpc);
 
-export const provideApi: ExtPluginApiBackendInitializationFn = (rpcObj: RPCProtocol, pluginManager: PluginManager) => {
-    TestServiceApiFactory = createAPIFactory();
-    // rpcObj,
-    // messageRegistryExt);
+export const provideApi: ExtPluginApiBackendInitializationFn = (rpc: RPCProtocol, pluginManager: PluginManager) => {
+    TestServiceApiFactory = createAPIFactory(rpc); // , messageRegistryExt);
     plugins = pluginManager;
 
     if (!isLoadOverride) {
@@ -63,17 +61,32 @@ function overrideInternalLoad(): void {
     // if we try to resolve theia module, return the filename entry to use cache.
     // tslint:disable-next-line:no-any
     module._load = function (request: string, parent: any, isMain: {}): any {
+
+        console.log('node/testservice-api-node-provider.ts : request =' + request);
+
         if (request !== '@theia/testservice') {
             return internalLoad.apply(this, arguments);
         }
 
         const plugin = findPlugin(parent.filename);
         if (plugin) {
-            const apiImpl = pluginsApiImpl.get(plugin.model.id);
+
+            console.log('plugin found parent.filename =' + parent.filename);
+            console.log('plugin found plugin.model.id =' + plugin.model.id);
+
+            let apiImpl = pluginsApiImpl.get(plugin.model.id);
+            if (!apiImpl) {
+                apiImpl = TestServiceApiFactory(plugin);
+                pluginsApiImpl.set(plugin.model.id, apiImpl);
+            }
+
+            console.log('apiImpl type =' + typeof (apiImpl));
+
             return apiImpl;
         }
 
         if (!defaultApi) {
+            console.log(`Could not identify plugin for '@bar/foo' require call from ${parent.filename}`);
             console.warn(`Could not identify plugin for '@bar/foo' require call from ${parent.filename}`);
             defaultApi = TestServiceApiFactory(emptyPlugin);
         }

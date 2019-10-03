@@ -23,11 +23,11 @@ export class TestServerPluginApiProvider implements ExtPluginApiProvider {
 
     provideApi(): ExtPluginApi {
         return {
-            // frontendExtApi: {
-            //     initPath: './browser/testservice-api-frontend-provider.js',
-            //     initFunction: 'ExtPluginApiFrontendInitializationFn',
-            //     initVariable: 'testserver_api_provider'
-            // },
+            frontendExtApi: {
+                initPath: './browser/testservice-api-frontend-provider.js',
+                initFunction: 'initializeApi',
+                initVariable: 'testserver_api_provider'
+            },
             backendInitPath: path.join(__dirname, './node/testservice-api-node-provider.js')
         };
     }

@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "@theia/plugin": "file:../../packages/plugin",
-    "@theia/testservice": "^0.0.1"
+    "@theia/testservice": "file:../../packages/test-service"
   }
 }

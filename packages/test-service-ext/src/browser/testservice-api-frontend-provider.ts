@@ -26,7 +26,7 @@ const pluginsApiImpl = new Map<string, typeof testService>();
 let defaultApi: typeof testService;
 
 export const initializeApi: ExtPluginApiFrontendInitializationFn = (rpc: RPCProtocol, plugins: Map<string, Plugin>) => {
-    const TestServiceApiFactory = createAPIFactory();
+    const TestServiceApiFactory = createAPIFactory(rpc);
     const handler = {
         // tslint:disable-next-line:no-any
         get: (target: any, name: string) => {

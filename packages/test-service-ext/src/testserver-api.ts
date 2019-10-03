@@ -15,20 +15,19 @@
  ********************************************************************************/
 
 import * as testservice from '@theia/testservice';
-// import { RPCProtocol } from '@theia/plugin-ext/src/common/rpc-protocol';
+import { RPCProtocol } from '@theia/plugin-ext/src/common/rpc-protocol';
 import { Plugin } from '@theia/plugin-ext/lib/common/plugin-api-rpc';
-// import { MessageRegistryExt } from '@theia/plugin-ext/src/plugin/message-registry';
+import { MessageRegistryExt } from '@theia/plugin-ext/src/plugin/message-registry';
 // import { MainMessageType } from '@theia/plugin-ext/lib/common/plugin-api-rpc';
 
 export interface TestServiceApiFactory {
     (plugin: Plugin): typeof testservice;
 }
 
-export function createAPIFactory()
-    // rpc: RPCProtocol,
-    // messageRegistryExt: MessageRegistryExt)
+export function createAPIFactory(rpc: RPCProtocol)// , messageRegistryExt: MessageRegistryExt)
     : TestServiceApiFactory {
 
+    const messageRegistryExt = new MessageRegistryExt(rpc);
     // const showInformationMessage = messageRegistryExt.showMessage.bind(messageRegistryExt, MainMessageType.Info);
 
     return function (plugin: Plugin): typeof testservice {
@@ -36,7 +35,7 @@ export function createAPIFactory()
         const myServerNew: typeof testservice.myServerNew = {
 
             sayHello(): void {
-                console.log('Hello from plugin');
+                console.log('Hello from myServerNew !!!');
                 // showInformationMessage('*** Hello from New Service !');
             }
 
