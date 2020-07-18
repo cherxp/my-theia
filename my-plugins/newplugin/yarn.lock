@@ -15,10 +15,11 @@
     read-pkg "4.0.1"
     yargs "12.0.1"
 
-"@theia/plugin@next":
-  version "0.11.0-next.a21dc550"
-  resolved "https://registry.yarnpkg.com/@theia/plugin/-/plugin-0.11.0-next.a21dc550.tgz#9f4174df88435df8c46f9b7b35e0e67a7b2981c8"
-  integrity sha512-UJqvnY588EENxrkeUm2qp29QFa75PN4DJ92ZMBV4KCvHTcOpnIKG9vHUvwlPdptL+FZdbHhNR+Qu9hK4eo+bLA==
+"@theia/plugin@file:../../packages/plugin":
+  version "0.10.0"
+
+"@theia/testservice@file:../../packages/test-service":
+  version "0.0.1"
 
 "@types/events@*":
   version "3.0.0"
@@ -808,9 +809,9 @@ locate-path@^3.0.0:
     path-exists "^3.0.0"
 
 lodash@^4.17.14, lodash@^4.8.0:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 lru-cache@^4.0.1, lru-cache@^4.1.5:
   version "4.1.5"
